@@ -1,0 +1,25 @@
+{
+  "name": "@wec360/schematics",
+  "version": "1.0.0",
+  "description": "Schematics for wec360° projects",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && jasmine **/*_spec.js",
+    "deploy": "yarn run build && yarn publish"
+  },
+  "keywords": [
+    "schematics"
+  ],
+  "author": "Leon Radley <leon@wec360.se>",
+  "license": "MIT",
+  "schematics": "./src/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^0.0.20",
+    "@angular-devkit/schematics": "^0.0.35",
+    "@nrwl/schematics": "^0.1.1",
+    "@types/jasmine": "^2.6.0",
+    "@types/node": "^8.0.31",
+    "jasmine": "^2.8.0",
+    "typescript": "^2.5.2"
+  }
+}

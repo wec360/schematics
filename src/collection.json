@@ -1,0 +1,101 @@
+// By default, collection.json is a Loose-format JSON5 format, which means it's loaded using a
+// special loader and you can use comments, as well as single quotes or no-quotes for standard
+// JavaScript identifiers.
+// Note that this is only true for collection.json and it depends on the tooling itself.
+// We read package.json using a require() call, which is standard JSON.
+{
+  // This is just to indicate to your IDE that there is a schema for collection.json.
+  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+
+  // Schematics are listed as a map of schematicName => schematicDescription.
+  // Each description contains a description field which is required, a factory reference,
+  // an extends field and a schema reference.
+  // The extends field points to another schematic (either in the same collection or a
+  // separate collection using the format collectionName:schematicName).
+  // The factory is required, except when using the extends field. The the factory can
+  // overwrite the extended schematic factory.
+  "schematics": {
+
+    // wec360
+    // "route": {
+    //   "factory": "./route",
+    //   "schema": "./route/schema.json",
+    //   "description": "Create Route"
+    // },
+
+    // Nx
+    "workspace": {
+      "extends": "@nrwl/schematics:workspace"
+    },
+
+    "application": {
+      "extends": "@nrwl/schematics:application"
+    },
+
+    "app": {
+      "extends": "@nrwl/schematics:app"
+    },
+
+    "lib": {
+      "extends": "@nrwl/schematics:lib"
+    },
+
+    "ngrx": {
+      "extends": "@nrwl/schematics:ngrx"
+    },
+
+    "upgrade-module": {
+      "extends": "@nrwl/schematics:upgrade-module"
+    },
+
+    "downgrade-module": {
+      "extends": "@nrwl/schematics:downgrade-module"
+    },
+
+    // Angular Schematics
+    "class": {
+      "aliases": [ "cl" ],
+      "extends": "@schematics/angular:class"
+    },
+
+    "component": {
+      "aliases": [ "c" ],
+      "extends": "@schematics/angular:component"
+    },
+
+    "directive": {
+      "aliases": [ "d" ],
+      "extends": "@schematics/angular:directive"
+    },
+
+    "enum": {
+      "aliases": [ "e" ],
+      "extends": "@schematics/angular:enum"
+    },
+
+    "guard": {
+      "aliases": [ "g" ],
+      "extends": "@schematics/angular:guard"
+    },
+
+    "interface": {
+      "aliases": [ "i" ],
+      "extends": "@schematics/angular:interface"
+    },
+
+    "module": {
+      "aliases": [ "m" ],
+      "extends": "@schematics/angular:module"
+    },
+
+    "pipe": {
+      "aliases": [ "p" ],
+      "extends": "@schematics/angular:pipe"
+    },
+
+    "service": {
+      "aliases": [ "s" ],
+      "extends": "@schematics/angular:service"
+    }
+  }
+}
